@@ -49,13 +49,15 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     ###############################################################################
 
     # Install Homebrew
-    echo "Installing Homebrew"
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+    if [ ! -x "$(command -v brew)" ]; then
+      echo "Installing Homebrew"
+      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    fi
     clear
 
     # Install Anaconda
-    if [ ! -d "~/anaconda3/" ]; then
+    if [ ! -d "${HOME}/anaconda3" ]; then
       echo "Installing Anaconda"
       sh -c "$(curl -fsSL https://repo.anaconda.com/archive/Anaconda3-5.2.0-MacOSX-x86_64.sh)"
     fi
@@ -99,6 +101,30 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     virtualbox \
     visual-studio-code
 
+    clear
+
+    echo "Changing dock default apps"
+    curl -o /tmp/dock-icon-remove.py https://raw.githubusercontent.com/ceeeeej/osx-dock-remover/master/dock-icon-remove.py
+
+    python /tmp/dock-icon-remove.py -r "Siri"
+    python /tmp/dock-icon-remove.py -r "Books"
+    python /tmp/dock-icon-remove.py -r "FaceTime"
+    python /tmp/dock-icon-remove.py -r "iTunes"
+    python /tmp/dock-icon-remove.py -r "App Store"
+    python /tmp/dock-icon-remove.py -r "Feedback"
+    python /tmp/dock-icon-remove.py -r "System"
+    python /tmp/dock-icon-remove.py -r "Reminders"
+    python /tmp/dock-icon-remove.py -r "Notes"
+    python /tmp/dock-icon-remove.py -r "Launchpad"
+    python /tmp/dock-icon-remove.py -r "Contacts"
+    python /tmp/dock-icon-remove.py -r "Photos"
+    python /tmp/dock-icon-remove.py -r "Maps"
+    python /tmp/dock-icon-remove.py -r "Calendar"
+
+    killall Dock
+
+    clear
+
     echo "Cleaning Up Cask Files"
     brew cask cleanup
 
@@ -112,7 +138,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
 
     clear
 
-    echo "${GREEN}Thanks for using DevMyMac! (forked from https://github.com/adamisntdead/DevMyMac)
+    echo "${GREEN}Thanks for using DevMyMac! (forked from https://github.com/adamisntdead/DevMyMac)"
 
 else
    echo "Need to install the OSX Command Line Tools (or XCode) First! Starting Install..."
