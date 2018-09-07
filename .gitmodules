@@ -1,0 +1,3 @@
+[submodule "osx-dock-remover"]
+	path = osx-dock-remover
+	url = git@github.com:ceeeeej/osx-dock-remover.git
