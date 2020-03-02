@@ -56,14 +56,6 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     fi
     clear
 
-    # Install Anaconda
-    if [ ! -d "${HOME}/anaconda3" ]; then
-      echo "Installing Anaconda"
-      sh -c "$(curl -fsSL https://repo.anaconda.com/archive/Anaconda3-5.2.0-MacOSX-x86_64.sh)"
-    fi
-
-    clear
-
     # Install Homebrew Apps
     echo "Installing Homebrew Command Line Tools"
     brew install \
@@ -82,6 +74,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     echo "Installing Brew Cask Apps"
     brew cask install \
     alfred \
+    anaconda \
     atom \
     bartender \
     bettertouchtool \
