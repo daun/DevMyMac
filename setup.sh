@@ -65,11 +65,21 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     heroku-toolbelt \
     vim \
     nvim \
-    the_silver_searcher
+    the_silver_searcher \
+    curl \
+    mas
 
-    brew install caskroom/cask/brew-cask
-
-    brew tap caskroom/cask
+    mas install 406056744 #Evernote
+    mas install 1333542190 #1Password
+    mas install 409201541 #Pages
+    mas install 409183694 #Keynote
+    mas install 409203825 #Numbers
+    mas install 1320666476 #Wipr
+    mas install 1176895641 #Spark
+    mas install 417375580 #BetterSnapTool
+    mas install 457622435 #Yoink
+    mas install 747648890 #Telegram
+    mas install 803453959 #Slack
 
     echo "Installing Brew Cask Apps"
     brew cask install \
