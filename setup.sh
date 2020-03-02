@@ -105,6 +105,24 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
 
     clear
 
+    echo "SSH Key Setup"
+    ssh-keygen -t rsa -b 4096 -C "chrisj.egr@gmail.com"
+
+    eval "$(ssh-agent -s)"
+
+    echo "Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile ~/.ssh/id_rsa" >> ~/.ssh/config
+
+    ssh-add -K ~/.ssh/id_rsa
+    pbcopy < ~/.ssh/id_rsa.pub
+    echo "Key is on the clipboard, please go to www.github.com and www.bitbucket.org to add the keys"
+
+    read -p "Press enter to continue setup"
+
+    clear
+
     echo "Changing dock default apps"
     curl -o /tmp/dock-icon-remove.py https://raw.githubusercontent.com/ceeeeej/osx-dock-remover/master/dock-icon-remove.py
 
