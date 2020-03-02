@@ -102,7 +102,8 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     sublime-text \
     typinator \
     virtualbox \
-    visual-studio-code
+    visual-studio-code \
+    vlc
 
     clear
 
