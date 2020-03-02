@@ -88,6 +88,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     atom \
     bartender \
     bettertouchtool \
+    dropbox \
     firefox \
     google-chrome \
     istat-menus \
@@ -95,9 +96,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     jetbrains-toolbox \
     keepingyouawake \
     keyboard-maestro \
-    mono-mdk \
     oni \
-    sharemouse \
     sourcetree \
     sublime-text \
     typinator \
