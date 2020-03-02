@@ -131,7 +131,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     python /tmp/dock-icon-remove.py -r "Siri"
     python /tmp/dock-icon-remove.py -r "Books"
     python /tmp/dock-icon-remove.py -r "FaceTime"
-    python /tmp/dock-icon-remove.py -r "iTunes"
+    python /tmp/dock-icon-remove.py -r "Music"
     python /tmp/dock-icon-remove.py -r "App Store"
     python /tmp/dock-icon-remove.py -r "Feedback"
     python /tmp/dock-icon-remove.py -r "System"
@@ -143,6 +143,9 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     python /tmp/dock-icon-remove.py -r "Maps"
     python /tmp/dock-icon-remove.py -r "Calendar"
     python /tmp/dock-icon-remove.py -r "News"
+    python /tmp/dock-icon-remove.py -r "TV"
+    python /tmp/dock-icon-remove.py -r "Podcasts"
+    python /tmp/dock-icon-remove.py -r "Mail"
 
     killall Dock
 
