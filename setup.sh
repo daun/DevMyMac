@@ -36,6 +36,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     defaults write com.apple.finder ShowStatusBar -bool true
     defaults write NSGlobalDomain KeyRepeat -int 0.02
     defaults write NSGlobalDomain InitialKeyRepeat -int 12
+    defaults write com.apple.dock show-recents -bool FALSE
     chflags nohidden ~/Library
 
     git config --global user.name "$name"
