@@ -140,6 +140,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) &&
     python /tmp/dock-icon-remove.py -r "Photos"
     python /tmp/dock-icon-remove.py -r "Maps"
     python /tmp/dock-icon-remove.py -r "Calendar"
+    python /tmp/dock-icon-remove.py -r "News"
 
     killall Dock
 
